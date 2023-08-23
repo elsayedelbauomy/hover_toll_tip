@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #eee;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.hover {
+
+    min-width: 120px;
+    height: 50px;
+    background-color: red;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+div::before {
+    display: none;
+    content: " This Is a Tolltip Content ";
+    background-color: #000;
+    position: absolute;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    background-color: #000;
+    top: -65px;
+    left: -37px;
+    text-align: center;
+    line-height: 3;
+    font-size: none;
+    font-weight: normal;
+    transition: hover 1s;
+
+}
+
+
+div::after {
+    position: absolute;
+    content: "";
+    display: none;
+    top: -15px;
+    left: 50px;
+    border: 11px solid;
+    border-color: #000 transparent transparent transparent;
+    transition: hover 1s;
+}
+
+div:hover::before {
+    display: inline-block;
+}
+
+div:hover::after {
+    display: inline-block;
+}
